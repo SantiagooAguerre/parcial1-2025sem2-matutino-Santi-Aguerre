@@ -57,7 +57,7 @@
       "id": 1, 
       "nombre": "Ana García", 
       "carrera": "Ingeniería Informática", 
-      "librosActuales": [2] 
+      "librosActuales": [] 
     },
     { 
       "id": 2, 
@@ -69,7 +69,7 @@
       "id": 3, 
       "nombre": "María Rodríguez", 
       "carrera": "Diseño Gráfico", 
-      "librosActuales": [5] 
+      "librosActuales": [] 
     },
     { 
       "id": 4, 

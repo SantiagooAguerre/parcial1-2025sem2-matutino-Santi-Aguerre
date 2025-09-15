@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ejercicio 4</title>
+    <title>Mini-Contacts API</title>
   </head>
   <body>
-    <input name="name" placeholder="Name" required />
-    <input name="email" placeholder="Email" required />
-    <select name="role">
-      <option>Admin</option>
-      <option>Editor</option>
-      <option>Viewer</option>
-    </select>
-    <button id="add">Add</button>
+    <form id="user-form">
+      <input id="name" placeholder="Name" required />
+      <input id="email" placeholder="Email" required />
+      <select id="role">
+        <option>Admin</option>
+        <option>Editor</option>
+        <option>Viewer</option>
+      </select>
+      <button type="submit">Add</button>
+    </form>
 
     <ul id="users"></ul>
+    <script src="script.js"></script>
   </body>
 </html>

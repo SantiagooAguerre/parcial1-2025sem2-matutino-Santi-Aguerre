@@ -1,27 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
+    
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parcial 1, 2025 sem 2, Desarrollo Web y Mobile</title>
     <link rel="stylesheet" href="ej01.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-    <h1>Ejercicio 01</h1>
-    <p>
-        Replicar la composición de ej_01_referencia.jpg lo más fiel posible,
-        respetando tipografías, tamaños, colores, espaciados y
-        alineaciones de cada sección. En /assets se encuentran las imágenes a usar
-        y en textos.md todo el contenido del menú. La entrega debe resolverse solo con
-        HTML + CSS (sin frameworks/JS).
-    </p>
-    <p>
-        La fuente a utilizar (Rufina Bold) ya ha sido descargada y agregada en
-        /assets/fonts, y se encuentra referenciada en el archivo ej01.css.
-        Solo deben aplicarla donde corresponda.
-    </p>
+    <div class="p-5 bg-yellow-300 grid grid-cols-2 text-red-600" id="fuente">
+        <div class="flex flex-col justify-center mr-4">
+            <h1 class="text-3xl mb-4">Los Pollos Hermanos</h1>
+            <p class="text-[7px]">El sabor que hace que hasta Heisenberg se saque el sombrero.</p>
+        </div>
+        <img src="assets/los_pollos_hermanos.png" alt="">
+    </div>
+    <div>
+        <div class="text-center text-[7px] mb-2">
+            <h1 id="fuente" class="justify-center text-center mt-10 text-2xl font-bold">Entradas</h1>
+            <p class="text-[6px]">El primer paso a la adicción</p>
+        </div>
+        <div class="grid grid-cols-2 p-4">
+            <img src="assets/better_call_saul.png" alt="">
+            <div class="px-5">
+                <div class="mb-2">
+                    <p class="text-right text-[10px]" id="fuente">$20</p>
+                    <hr class="border-t border-dotted border-black">
+                    <p class="font-bold mt-1" id="fuente">Alitas de Crystal Meth</p>
+                    <p class="text-[5px] mb-5">Crujientes y adictivas, servidas con una salsa “azul” de la casa.</p>
+                </div>
+                <div class="mb-2">
+                    <p class="text-right text-[10px]" id="fuente">$18</p>
+                    <hr class="border-t border-dotted border-black">
+                    <p class="font-bold mt-1" id="fuente">Nachos Salamanca</p>
+                    <p class="text-[5px] mb-5">Se comen rápido, pero cuidado… siempre hay consecuencias.</p>
+                </div>
+                <div>
+                    <p class="text-right text-[10px]" id="fuente">$12</p>
+                    <hr class="border-t border-dotted border-black">
+                    <p class="font-bold mt-1" id="fuente">Guacamole Better Call Saul</p>
+                    <p class="text-[5px] mb-5">Ideal para empezar la velada con una defensa impecable.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-[7px] mb-2">
+            <h1 id="fuente" class="justify-center text-center mt-10 text-2xl font-bold">Platos Principales</h1>
+            <p class="text-[6px]">La verdadera ‘cocina’ de Los Pollos Hermanos</p>
+        </div>
+        <div class="grid grid-cols-2 p-4">
+            <div class="px-5">
+                <div class="mb-2">
+                    <p class="text-right text-[10px]" id="fuente">$20</p>
+                    <hr class="border-t border-dotted border-black">
+                    <p class="font-bold mt-1" id="fuente">Pollo a la Gus Fring</p>
+                    <p class="text-[5px] mb-5">Perfecto, impecable, sin una sola falla.</p>
+                </div>
+                <div class="mb-2">
+                    <p class="text-right text-[10px]" id="fuente">$22</p>
+                    <hr class="border-t border-dotted border-black">
+                    <p class="font-bold mt-1" id="fuente">Ribs al estilo Heisenberg</p>
+                    <p class="text-[5px] mb-5">Tan intensas que parecen cocinadas en un laboratorio de química.</p>
+                </div>
+                <div>
+                    <p class="text-right text-[10px]" id="fuente">$20</p>
+                    <hr class="border-t border-dotted border-black">
+                    <p class="font-bold mt-1" id="fuente">Steak “Say My Name”</p>
+                    <p class="text-[5px] mb-5">Jugoso, potente y servido con respeto absoluto.</p>
+                </div>
+            </div>
+            <img src="assets/walter_white.png" alt="">
+        </div>
+        <div class="text-center text-[7px] py-4">
+            <h1 id="fuente" class="justify-center text-center mt-10 text-2xl font-bold">Postres & Bebidas</h1>
+            <p class="text-[6px]">Para terminar la jornada como un capo del cartel</p>
+        </div>
+        <div class="grid grid-cols-2 p-4 mb-8">
+            <img src="assets/gustavo_fring.png" alt="">
+            <div class="px-5">
+                <div class="mb-2">
+                    <p class="text-right text-[10px]" id="fuente">$40</p>
+                    <hr class="border-t border-dotted border-black">
+                    <p class="font-bold mt-1" id="fuente">Flan del Desierto</p>
+                    <p class="text-[5px] mb-5">Suave, dorado y con un caramelo tan dulce que parece cocinado bajo el sol de Albuquerque.</p>
+                </div>
+                <div class="mb-2">
+                    <p class="text-right text-[10px]" id="fuente">$30</p>
+                    <hr class="border-t border-dotted border-black">
+                    <p class="font-bold mt-1" id="fuente">Café Lalo Salamanca</p>
+                    <p class="text-[5px] mb-5">Fuerte, con un “golpe” inesperado al final.</p>
+                </div>
+                <div>
+                    <p class="text-right text-[10px]" id="fuente">$90</p>
+                    <hr class="border-t border-dotted border-black">
+                    <p class="font-bold mt-1" id="fuente">Whisky Pollos Hermanos</p>
+                    <p class="text-[5px] mb-5">Tan suave que hasta Mike se tomaría uno después del turno.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

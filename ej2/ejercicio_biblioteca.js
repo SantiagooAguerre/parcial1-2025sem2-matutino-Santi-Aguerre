@@ -7,13 +7,13 @@
  * 
  * INSTRUCCIONES:
  * 1. Analiza la estructura de datos proporcionada
- * 2. Implementa todas las funciones requeridas 
+ * 2. Implementa todas las funciones requeridas
  * 3. Prueba tus funciones con los datos de ejemplo y los casos de prueba proporcionados
  * 4. NO modifiques la estructura base de los objetos, solo añade las funcionalidades solicitadas
  */
 
 // Importamos los datos desde el archivo JSON usando ES6 import
-import bibliotecaData from './datos_biblioteca.json' assert { type: 'json' };
+import bibliotecaData from './datos_biblioteca.json' with { type: 'json' };
 
 // Creamos una copia de los datos para trabajar con ellos
 const biblioteca = { ...bibliotecaData };
@@ -34,7 +34,33 @@ const biblioteca = { ...bibliotecaData };
  * @return {boolean|string} - true si se realizó el préstamo, mensaje de error si no
  */
 function prestarLibro(idLibro, idEstudiante, fechaPrestamo) {
-  // Tu código aquí
+  try {
+    const libro = biblioteca.libros.find(libro => libro.id === idLibro);
+    if (!libro) return "El libro no existe";
+    if (!libro.disponible) return "El libro ya está prestado";
+
+    const estudiante = biblioteca.estudiantes.find(estudiante => estudiante.id === idEstudiante);
+    if (!estudiante) return "El estudiante no existe";
+
+    libro.prestamos.push({
+      estudiante: estudiante.nombre,
+      fechaPrestamo: fechaPrestamo,
+      fechaDevolucion: null
+    });
+
+    libro.disponible = false;
+
+    estudiante.librosActuales.push({
+      idLibro: libro.id,
+      titulo: libro.titulo,
+      fechaPrestamo: fechaPrestamo
+    });
+
+    return true;
+  } catch (error) {
+    console.error("Error al prestar el libro:", error);
+    return false;
+  }
 }
 
 
@@ -48,20 +74,31 @@ function prestarLibro(idLibro, idEstudiante, fechaPrestamo) {
  * @return {array} - Array con los libros que cumplen los criterios
  */
 function buscarLibros(criterios) {
-  // Tu código aquí
-  // Ejemplo de criterios: {titulo: "javascript", disponible: true}
+  return biblioteca.libros.filter(libro => {
+    let coincide = true;
+    if (criterios.titulo) {
+      coincide = coincide && libro.titulo.toLowerCase().includes(criterios.titulo.toLowerCase());
+    }
+    if (criterios.autor) {
+      coincide = coincide && libro.autor.toLowerCase().includes(criterios.autor.toLowerCase());
+    }
+    if (criterios.categoria) {
+      coincide = coincide && libro.categoria.toLowerCase() === criterios.categoria.toLowerCase();
+    }
+    if (criterios.disponible !== undefined) {
+      coincide = coincide && libro.disponible === criterios.disponible;
+    }
+    return coincide;
+  });
 }
-
 
 // ALGUNOS CASOS DE PRUEBA
 // Descomentar para probar tu implementación
 
-/*
+
 console.log("Probando préstamo de libro:");
 console.log(prestarLibro(1, 3, "2025-09-13"));
 
 console.log("\nBuscando libros de programación disponibles:");
 console.log(buscarLibros({categoria: "Programación", disponible: true}));
-
-*/
 
